@@ -1,0 +1,181 @@
+/* =========================
+   RESET Y BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.titulo {
+    font-size: 3rem;
+    color: #ff1c1c;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   BUSCADOR
+========================= */
+#buscador {
+    padding: 12px 15px;
+    width: 260px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#buscador:focus {
+    box-shadow: 0 0 10px #ff1c1c;
+}
+
+/* =========================
+   GRID POKEDEX
+========================= */
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Tipos Pokémon */
+.tipo-fire { background: #f44336 !important; }
+.tipo-water { background: #2196f3 !important; }
+.tipo-grass { background: #4caf50 !important; }
+.tipo-electric { background: #ffeb3b !important; color: black; }
+.tipo-ice { background: #00bcd4 !important; }
+.tipo-fighting { background: #795548 !important; }
+.tipo-poison { background: #9c27b0 !important; }
+.tipo-ground { background: #cddc39 !important; color: black; }
+.tipo-flying { background: #03a9f4 !important; }
+.tipo-psychic { background: #e91e63 !important; }
+.tipo-bug { background: #8bc34a !important; color: black; }
+.tipo-rock { background: #607d8b !important; }
+.tipo-ghost { background: #673ab7 !important; }
+.tipo-dragon { background: #3f51b5 !important; }
+.tipo-dark { background: #212121 !important; }
+.tipo-steel { background: #9e9e9e !important; color: black; }
+.tipo-fairy { background: #ff80ab !important; color: black; }
+
+/* =========================
+   TARJETA POKEMON
+========================= */
+.pokemon-card {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #d32f2f;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+}
+
+/* =========================
+   LADO IZQUIERDO
+========================= */
+.left {
+    width: 50%;
+    background: #b71c1c;
+    padding: 15px;
+    text-align: center;
+    border-right: 2px solid rgba(255,255,255,0.1);
+}
+
+.left h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.left img {
+    width: 120px;
+    transition: transform 0.3s;
+}
+
+.left img:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   LADO DERECHO
+========================= */
+.right {
+    width: 50%;
+    background: #212121;
+    padding: 15px;
+    text-align: left;
+}
+
+/* Texto */
+.right p {
+    font-size: 0.85rem;
+    margin: 6px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =========================
+   BARRAS DE STATS
+========================= */
+.barra {
+    width: 100%;
+    height: 6px;
+    background: #555;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.relleno {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Colores por stat */
+.vida {
+    background: linear-gradient(90deg, #ff5252, #ff867f);
+}
+
+.ataque {
+    background: linear-gradient(90deg, #ffb74d, #ffe082);
+}
+
+.defensa {
+    background: linear-gradient(90deg, #64b5f6, #90caf9);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+    .pokemon-card {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .left {
+        border-right: none;
+        border-bottom: 2px solid rgba(255,255,255,0.1);
+    }
+}
